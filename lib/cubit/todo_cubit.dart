@@ -3,9 +3,27 @@ import '../models/todo_model.dart';
 
 class TodoCubit extends HydratedCubit<List<TodoModel>> {
   TodoCubit() : super([]);
-  void addTodo(String title) {}
-  void removeTodo(DateTime createdAt) {}
-  void completeTodo(DateTime createdAt) {}
+  void addTodo(String title) {
+    final todo = TodoModel(
+      title: title,
+      createdAt: DateTime.now(),
+      isDone: false,
+    );
+    emit([...state, todo]);
+  }
+
+  void removeTodo(DateTime createdAt) {
+    state.removeWhere(
+      (element) => element.createdAt == createdAt,
+    );
+    emit([...state]);
+  }
+
+  void completeTodo(DateTime createdAt) {
+    final todo = state.firstWhere((element) => element.createdAt == createdAt);
+    todo.isDone = !todo.isDone;
+    emit([...state]);
+  }
 
   @override
   List<TodoModel>? fromJson(Map<String, dynamic> json) {
