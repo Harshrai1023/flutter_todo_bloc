@@ -41,32 +41,32 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: TextField(
-              // onChanged: context.read<TodoCubit>().filterTodo,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(0),
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: cusBlack,
-                  size: 20,
-                ),
-                prefixIconConstraints: const BoxConstraints(
-                  maxHeight: 20,
-                  minWidth: 25,
-                ),
-                border: InputBorder.none,
-                hintText: "Search",
-                hintStyle: TextStyle(color: cusGrey),
-              ),
-            ),
-          ),
+          // Container(
+          //   margin: const EdgeInsets.symmetric(horizontal: 10),
+          //   padding: const EdgeInsets.symmetric(horizontal: 10),
+          //   decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.circular(20),
+          //   ),
+          //   child: TextField(
+          //     // onChanged: context.read<TodoCubit>().filterTodo,
+          //     decoration: InputDecoration(
+          //       contentPadding: const EdgeInsets.all(0),
+          //       prefixIcon: Icon(
+          //         Icons.search,
+          //         color: cusBlack,
+          //         size: 20,
+          //       ),
+          //       prefixIconConstraints: const BoxConstraints(
+          //         maxHeight: 20,
+          //         minWidth: 25,
+          //       ),
+          //       border: InputBorder.none,
+          //       hintText: "Search",
+          //       hintStyle: TextStyle(color: cusGrey),
+          //     ),
+          //   ),
+          // ),
           Container(
             margin: const EdgeInsets.all(10),
             child: const Text(
