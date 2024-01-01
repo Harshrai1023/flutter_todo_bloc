@@ -4,6 +4,10 @@ import '../models/todo_model.dart';
 class TodoCubit extends HydratedCubit<List<TodoModel>> {
   TodoCubit() : super([]);
   void addTodo(String title) {
+    if (title.isEmpty) {
+      addError('Title cannot be empty!');
+      return;
+    }
     final todo = TodoModel(
       title: title,
       createdAt: DateTime.now(),
